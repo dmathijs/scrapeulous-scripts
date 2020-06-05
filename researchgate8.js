@@ -15,7 +15,7 @@ class ResearchGate extends BrowserWorker {
         await this.page.goto(url);
         await this.page.waitForSelector('.nova-e-text');
         await this.page.waitFor(200);
-
+        return ['data-got-here']
         await this.page.evaluate(() => {
             let loadMoreButton = document.querySelector('.show-more-less-authors__button')
             if(loadMoreButton){
@@ -25,7 +25,6 @@ class ResearchGate extends BrowserWorker {
 
         // ajax load
         await this.page.waitFor(100);
-        return ['data-got-here']
         
         return await this.page.evaluate(() => {
             const data = [];
