@@ -28,6 +28,7 @@ class ResearchGate extends BrowserWorker {
 
         return await this.page.evaluate(() => {
             const data = [];
+            
             let authors = document.querySelectorAll('.nova-v-person-list-item__align-content');
 
             authors.forEach((el) => {
@@ -54,12 +55,10 @@ class ResearchGate extends BrowserWorker {
                     })
                 }
 
-                if(obj.title != null){
-                    data.push(obj)
-                }
-                
-                return data;
+                data.push(obj)
             });
+
+            return data;
         })
     }
 }
