@@ -47,7 +47,6 @@ class ResearchGate extends BrowserWorker {
                         // This is the rating, can be changed..
                     }else{
                         obj.affiliation = meta.innerText;
-                        break;
                     }
                 })
             }
