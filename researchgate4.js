@@ -16,10 +16,13 @@ class ResearchGate extends BrowserWorker {
         await this.page.waitForSelector('.nova-e-text');
         await this.page.waitFor(200);
 
-        let loadMoreButton = document.querySelector('.show-more-less-authors__button')
-        if(loadMoreButton){
-            await loadMoreButton.click();
-        }
+        await this.page.evaluate(() => {
+            let loadMoreButton = document.querySelector('.show-more-less-authors__button')
+            if(loadMoreButton){
+                await loadMoreButton.click();
+            }
+        });
+
         // ajax load
         await this.page.waitFor(100);
 
