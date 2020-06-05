@@ -30,7 +30,7 @@ class ResearchGate extends BrowserWorker {
             const data = [];
             
             let authors = document.querySelectorAll('.nova-v-person-list-item__align-content');
-
+            data.push(authors.length)
             authors.forEach((el) => {
                 let obj = {
                     title:null,
