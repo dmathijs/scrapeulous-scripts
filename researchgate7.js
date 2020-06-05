@@ -25,7 +25,8 @@ class ResearchGate extends BrowserWorker {
 
         // ajax load
         await this.page.waitFor(100);
-
+        return ['data-got-here']
+        
         return await this.page.evaluate(() => {
             const data = [];
             
