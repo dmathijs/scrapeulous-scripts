@@ -23,15 +23,7 @@ class ResearchGate extends BrowserWorker {
 
         // ajax load
         await this.page.waitFor(100);
-
-        let options = {
-            type: 'png',
-            fullPage: false,
-            encoding: 'base64'
-        };
-    
-        return await this.page.screenshot(options);
-    
+        return await this.page.content();    
         return await this.page.evaluate(() => {
             let data = [];
             
