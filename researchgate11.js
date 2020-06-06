@@ -12,7 +12,7 @@
  */
 class ResearchGate extends BrowserWorker {
     async crawl(url) {
-        return 'this is a test'
+        return ['this is a test']
         await this.page.goto(url);
         await this.page.waitForSelector('.nova-e-text');
         await this.page.waitFor(200);
